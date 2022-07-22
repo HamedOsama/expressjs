@@ -1,10 +1,12 @@
 const express = require('express')
 const morgan = require('morgan')
+const cors = require('cors')
 const routes = require('./src/routes/index.js')
 
 const port = process.env.PORT || 3333;
 const app = express()
 require('./src/db/db')
+app.use(cors())
 app.use(express.json())
 
 // security middleware
