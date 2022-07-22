@@ -24,7 +24,7 @@ app.use((_, res) => {
     });
 });
 
-app.listen(port,()=>console.log(`server running on: http://127.0.0.1:${PORT}`))
+app.listen(port,()=>console.log(`server running on: http://127.0.0.1:${port}`))
 
 // routes 
 // (get) get all products : http://127.0.0.1:3000/api/v1/products/all-products
