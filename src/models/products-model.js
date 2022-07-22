@@ -20,9 +20,9 @@ const productSchema=mongoose.Schema({
         required:false
     }
 })
-productSchema.methods.toJson=function(){
+productSchema.methods.toJSON=function(){
     const product=this
-    const productObj=product.toObject
+    const productObj=product.toObject()
     return productObj
 }
  const Product=mongoose.model('products',productSchema)
