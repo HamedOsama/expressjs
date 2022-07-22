@@ -10,13 +10,17 @@ const uploads=multer({
 })
 const addProduct = async function(req,res){
     try {
-       uploads.single('image')
+        uploads.single('image')
         const product = new Product(req.body);
         if(req.file){
             product.image=req.file.buffer
         }
         await product.save();
-        res.send(product)
+        res.json({
+            status: 'success',
+            data: product,
+            message: 'Data Retrieved successfully',
+        });
     } catch (error) {
         res.send(error.message)
     }
